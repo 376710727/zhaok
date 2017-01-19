@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Z.Framework.Service.ZService" CodeBehind="ZService.svc.cs" %>

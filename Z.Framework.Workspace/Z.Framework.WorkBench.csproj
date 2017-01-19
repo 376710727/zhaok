@@ -1,0 +1,232 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{00130DC7-A379-4C1D-8CDF-BC628085C17D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Z.Framework.WorkBench</RootNamespace>
+    <AssemblyName>Z.Framework.WorkBench</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Output\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Windows.Shell">
+      <HintPath>..\Lib\Microsoft.Windows.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Network\NetworkHelper.cs" />
+    <Compile Include="Network\Utilities.cs" />
+    <Compile Include="ReflexHelper.cs" />
+    <Compile Include="Service References\zService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SystemFramework.xaml.cs">
+      <DependentUpon>SystemFramework.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SystemLoginPage.xaml.cs">
+      <DependentUpon>SystemLoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SystemPreparing.xaml.cs">
+      <DependentUpon>SystemPreparing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tools\DPIAdpter.cs" />
+    <Compile Include="Tools\ProgressBar.xaml.cs">
+      <DependentUpon>ProgressBar.xaml</DependentUpon>
+    </Compile>
+    <Resource Include="Style\Colors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Page Include="SystemFramework.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SystemLoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SystemPreparing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools\ProgressBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\DataSources\Z.Framework.Common.ResultInfo.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\zService\Z.Framework.WorkBench.zService.CompositeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\zService\ZService.wsdl" />
+    <None Include="Service References\zService\ZService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\zService\ZService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\zService\ZService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\zService\ZService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\zService\ZService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\zService\ZService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\LoginBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\FrameworkBtn\arrow.png" />
+    <Resource Include="Images\FrameworkBtn\Blue Arrow.png" />
+    <Resource Include="Images\FrameworkBtn\close.png" />
+    <Resource Include="Images\FrameworkBtn\delete.png" />
+    <Resource Include="Images\FrameworkBtn\down.png" />
+    <Resource Include="Images\FrameworkBtn\fixed.png" />
+    <Resource Include="Images\FrameworkBtn\green.png" />
+    <Resource Include="Images\FrameworkBtn\list.png" />
+    <Resource Include="Images\FrameworkBtn\logout.png" />
+    <Resource Include="Images\FrameworkBtn\maximize.png" />
+    <Resource Include="Images\FrameworkBtn\message.png" />
+    <Resource Include="Images\FrameworkBtn\minimize.png" />
+    <Resource Include="Images\FrameworkBtn\nails-off.png" />
+    <Resource Include="Images\FrameworkBtn\nails-on.png" />
+    <Resource Include="Images\FrameworkBtn\Nails.png" />
+    <Resource Include="Images\FrameworkBtn\orange.png" />
+    <Resource Include="Images\FrameworkBtn\pitch on.jpg" />
+    <Resource Include="Images\FrameworkBtn\talk.png" />
+    <Resource Include="Images\FrameworkBtn\top.png" />
+    <Resource Include="Images\FrameworkBtn\user.png" />
+    <Resource Include="Images\FrameworkBtn\warn.png" />
+    <Resource Include="Images\FrameworkBtn\功能菜单.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Z.Framework.Common\Z.Framework.Common.csproj">
+      <Project>{1ed0e812-db60-46c4-a3a8-d7e5c9952ca0}</Project>
+      <Name>Z.Framework.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Z.Framework.Model\Z.Framework.Model.csproj">
+      <Project>{6d0ea265-cb33-4d49-b015-d47b638e4cb0}</Project>
+      <Name>Z.Framework.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\zService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\zService\ZService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\zService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\zService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\zService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Login\bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Login\line.png" />
+    <Resource Include="Images\Login\login-top.png" />
+    <Resource Include="Images\Login\password.png" />
+    <Resource Include="Images\Login\username.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Lib\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

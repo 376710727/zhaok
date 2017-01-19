@@ -1,0 +1,80 @@
+create table T_ACCOUNT
+(
+   ID int primary key identity,
+   Account_Name nvarchar(32) unique not null,
+   Account_Pwd nvarchar(64) not null,
+   Create_Time Datetime  null,
+   Create_Ip nvarchar(20) null default('127.0.0.0'),
+   Is_Valid bit default 1,
+   Is_Deleted bit default 0,    --Valid Flag
+   Deleted_Time datetime null,  ---Del Flag
+)
+
+create table T_ACCOUNT_INFO
+(
+   ID int primary key identity,
+   User_id int foreign key references T_ACCOUNT(ID), --UID
+   User_Name nvarchar(20) not null, --Name
+   User_Phone nvarchar(50) null,  
+   User_Address nvarchar(200) null,
+   User_Code nvarchar(200) null, --workcode
+   Is_Deleted bit default 0,
+   Create_Time datetime null,
+)
+
+create table T_DEPT
+(
+ ID int primary key identity,
+ Dept_Name nvarchar(200) not null unique,
+ Dept_Code nvarchar(100) not null unique,
+ Description nvarchar(500) null,
+ Create_Time DateTime null,
+)
+
+--Rel
+create Table T_ACCOUNT_DEPT
+(
+   ID int primary key identity,
+   User_id int foreign key references T_ACCOUNT(ID),  --UID
+   Dept_id int foreign key references T_DEPT(ID), -- Dept Id
+   Is_Deleted bit default 0,
+
+)
+
+create Table T_MENU
+(
+ ID int primary key identity,
+ Menu_Name nvarchar(50) not null,  --can be same
+ Menu_Code nvarchar(50) unique not null,
+ Menu_Authorize int not null, --Level
+ Parent int not null default 0, -- record this menu's parent-node
+ Is_Valid  bit null default 1, 
+ Is_Deleted bit null default 0,
+ Category int null default 1, -- 1=ChildNode ,2=TreeViewNode, tobe confirmed?
+ Create_Time datetime null,
+
+)
+
+create table T_MENU_INFO
+(
+ Menu_Id int foreign key references T_MENU(ID),
+ Menu_Icon nvarchar(max) null ,
+ Menu_Description nvarchar(max) null,
+ Menu_FilePath nvarchar(max) null,
+ Menu_Instance nvarchar(200) null,
+ Menu_Route nvarchar(200) NULL,
+ Menu_Url nvarchar(200) NULL,
+ Is_Deleted bit null default 0,
+
+ Create_Time datetime null,
+)
+
+Create Table T_ACCOUNT_ROLES
+(
+ID int primary key identity,
+User_Id int foreign key references T_ACCOUNT(ID),
+Authorize_Menu int foreign key references T_MENU(ID),
+Level int not null ,
+Create_Time datetime null,
+Is_Deleted bit default 0,
+)

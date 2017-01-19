@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="8ac98019-9407-4849-bc11-fd893b239186" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:51848/ZService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ZService.xsd" MetadataType="Schema" ID="17181bbc-ca8a-4bd0-91b7-352447745ed3" SourceId="1" SourceUrl="http://localhost:51848/ZService.svc?xsd=xsd2" />
+    <MetadataFile FileName="ZService.disco" MetadataType="Disco" ID="52a21037-f971-410f-a6a9-3dedc08ba859" SourceId="1" SourceUrl="http://localhost:51848/ZService.svc?disco" />
+    <MetadataFile FileName="ZService1.xsd" MetadataType="Schema" ID="713718d1-cb57-4245-911d-865db00d69c4" SourceId="1" SourceUrl="http://localhost:51848/ZService.svc?xsd=xsd0" />
+    <MetadataFile FileName="ZService2.xsd" MetadataType="Schema" ID="cd1ff56b-cecf-4ea7-a027-116e39360763" SourceId="1" SourceUrl="http://localhost:51848/ZService.svc?xsd=xsd5" />
+    <MetadataFile FileName="ZService3.xsd" MetadataType="Schema" ID="6835bc6f-39ea-4221-a782-130752136728" SourceId="1" SourceUrl="http://localhost:51848/ZService.svc?xsd=xsd3" />
+    <MetadataFile FileName="ZService.wsdl" MetadataType="Wsdl" ID="80af4b88-b3e6-423b-8744-a2f55b4e579a" SourceId="1" SourceUrl="http://localhost:51848/ZService.svc?wsdl" />
+    <MetadataFile FileName="ZService4.xsd" MetadataType="Schema" ID="b915c46a-7fc9-48d5-a3c5-abf9f7840371" SourceId="1" SourceUrl="http://localhost:51848/ZService.svc?xsd=xsd1" />
+    <MetadataFile FileName="ZService5.xsd" MetadataType="Schema" ID="046d9b0a-20bd-4fb0-a38f-851a9d2cf422" SourceId="1" SourceUrl="http://localhost:51848/ZService.svc?xsd=xsd4" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
