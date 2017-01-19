@@ -11,7 +11,7 @@ namespace Z.Framework.Workspace
     public class ReflexHelper
     {
         /// <summary>
-        /// 反射文件路径1
+        /// 反射文件路径
         /// </summary>
         public static string Path = Environment.CurrentDirectory + "\\Demo.dll";
 
