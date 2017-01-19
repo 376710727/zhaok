@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Z.Framework.Model
 {
+    /// <summary>
+    /// 用户基本信息
+    /// </summary>
     public class Account_Info
     {
         public string Account { set; get; }
